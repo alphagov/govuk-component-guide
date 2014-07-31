@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+@import "grid_layout.scss";
+
+.outer-block {
+  @include outer-block;
+}
+
+.inner-block {
+  @include inner-block;
+}

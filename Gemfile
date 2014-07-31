@@ -32,3 +32,5 @@ if ENV['SLIMMER_DEV']
 else
   gem 'slimmer', '4.1.0'
 end
+
+gem 'govuk_frontend_toolkit', '1.5.0'
