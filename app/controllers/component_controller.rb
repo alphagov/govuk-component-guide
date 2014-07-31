@@ -6,10 +6,14 @@ class ComponentController < ApplicationController
 
   end
 
+  def list
+    @components = available_components
+  end
+
 private
   def available_components
     {
-        "beta_label" => ""
+        "beta_label" => {}
     }
   end
 end
