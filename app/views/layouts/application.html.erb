@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GovukComponentGuide</title>
+  <title>GOV.UK Component Guide</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div id="wrapper">
+    <%= yield %>
+</div>
 
 </body>
 </html>

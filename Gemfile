@@ -27,3 +27,8 @@ gem 'spring',      group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+if ENV['SLIMMER_DEV']
+  gem 'slimmer', :path => '../slimmer'
+else
+  gem 'slimmer', '4.1.0'
+end
