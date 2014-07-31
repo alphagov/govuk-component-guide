@@ -1,8 +1,8 @@
-<div class="component-list">
-  <h1>
-    GOV.UK Components
-  </h1>
+<% content_for :header do %>
+  Available Components
+<% end %>
 
+<div class="component-list">
   <ol>
     <% @components.each do |component| %>
       <li>

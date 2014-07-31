@@ -9,9 +9,17 @@
 
 <div id="wrapper">
 
+  <header id="header">
+    <div class="outer-block">
+      <div class="inner-block">
+        <p class="app-name"><a href="/">GOV.UK Components Guide</a></p>
+        <h1><%= yield :header %></h1>
+      </div>
+    </div>
+  </header>
+
   <div class="outer-block">
     <div class="inner-block">
-
       <%= yield %>
     </div>
   </div>

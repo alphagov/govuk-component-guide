@@ -37,3 +37,26 @@ code {
     display: block;
   }
 }
+
+#global-header,
+#global-header-bar,
+#global-breadcrumb,
+#footer {
+  display: none;
+}
+
+#wrapper {
+  margin: 1em 5em;
+  border-bottom: none;
+}
+
+#header {
+
+  .app-name {
+    margin: 0
+  }
+  .inner-block {
+    border-bottom: 1px solid #ccc;
+  }
+  margin: 1em 0 2em;
+}
