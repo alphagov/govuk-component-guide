@@ -6,11 +6,11 @@
 
   <p>How to call this component</p>
   <code class="block">
-    &lt;%= render partial: 'govuk_component/beta_label' %&gt;
+    &lt;%= render partial: 'govuk_component/<%= @component_name %>' %&gt;
   </code>
 
   <p>How this component looks</p>
   <div class="preview">
-    <%= render partial: 'govuk_component/beta_label' %>
+    <%= render partial: "govuk_component/#{@component_name}", locals: @component_params %>
   </div>
 </div>
