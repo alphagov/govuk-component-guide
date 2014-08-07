@@ -14,12 +14,7 @@ class ComponentController < ApplicationController
 private
   def available_components
     {
-        "beta_label" => {},
-        "example" => {
-          :params => {
-            :content => "Hello!"
-          }
-        }
+        "beta_label" => {}
     }
   end
 end
