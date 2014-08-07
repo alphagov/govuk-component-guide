@@ -14,3 +14,12 @@ If you're running those branches of Slimmer and Static locally then you can use 
 
 It's a pretty standard Rails app, clone it, bundle and run with bundle.
 
+
+## Running on Heroku
+
+You'll need a couple of ENV vars:
+
+`GOVUK_APP_DOMAIN` needs to be set, just use `www.gov.uk`
+
+`PLEK_SERVICE_STATIC_URI` should be set to a GOV.UK [Static](https://github.com/alphagov/static) host, eg `https://assets-origin.preview.alphagov.co.uk`.
+That version of Static is used to fetch components from.
