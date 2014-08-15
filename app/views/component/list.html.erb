@@ -6,7 +6,10 @@
   <ol>
     <% @components.each do |component| %>
       <li>
-        <a href="/component/<%= component[0] %>"><%= component[0] %></a>
+        <h2><a href="/component/<%= component["id"] %>"><%= component["name"] %></a></h2>
+        <% if component["description"] %>
+          <p><%= component["description"] %></p>
+        <% end %>
       </li>
     <% end %>
   </ol>
