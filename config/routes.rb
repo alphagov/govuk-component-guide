@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'component/:name' => 'component#show'
+  get 'component/:id' => 'component#show'
   get 'component' => 'component#list'
 
   # The priority is based upon order of creation: first created -> highest priority.

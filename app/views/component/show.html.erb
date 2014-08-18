@@ -1,16 +1,16 @@
 <% content_for :header do %>
-  <%= @component_name %>
+  <%= @component["name"] %>
 <% end %>
 
 <div class="component-show">
 
   <p>How to call this component</p>
   <code class="block">
-    &lt;%= render partial: 'govuk_component/<%= @component_name %>' %&gt;
+    &lt;%= render partial: 'govuk_component/<%= @component["id"] %>' %&gt;
   </code>
 
   <p>How this component looks</p>
   <div class="preview">
-    <%= render partial: "govuk_component/#{@component_name}", locals: @component_params %>
+    <%= render partial: "govuk_component/#{@component["id"]}" %>
   </div>
 </div>

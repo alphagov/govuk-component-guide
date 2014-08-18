@@ -34,3 +34,4 @@ else
 end
 
 gem 'govuk_frontend_toolkit', '1.5.0'
+gem 'rest-client'
