@@ -36,6 +36,11 @@ code {
     padding: 1em;
     display: block;
   }
+
+  &.small {
+    @include core-14;
+  }
+  white-space: pre;
 }
 
 #global-header,
@@ -60,3 +65,4 @@ code {
   }
   margin: 1em 0 2em;
 }
+
