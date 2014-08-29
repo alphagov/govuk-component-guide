@@ -12,14 +12,27 @@ If you're running those branches of Slimmer and Static locally then you can use 
 
 ## Installation
 
-It's a pretty standard Rails app, clone it, bundle and run with bundle.
+It's a pretty standard Rails app, clone it, `bundle` it.
 
+## Running
+
+You'll need to set the environment variable `PLEK_SERVICE_STATIC_URI` to be a host running an instance of [alphagov/static](https://github.com/alphagov/static).
+
+This is where the component documenation used to generate the dynamic parts of this guide is fetched from. Pointing at
+different static hosts may show different components. For example, pointing at `assets.digital.cabinet-office.gov.uk` will
+be the latest/in-production version of components, but you could also point a local/in-development static host, to preview
+it's components (see below)
+
+## Running locally
+
+Checkout [alphagov/static](https://github.com/alphagov/static), follow the installation and local running instructions there, then run:
+
+```
+PLEK_SERVICE_STATIC_URI=http://0.0.0.0:3013 bundle exec rails s
+```
+
+This will point the component guide at your local running version of static.
 
 ## Running on Heroku
 
-You'll need a couple of ENV vars:
-
-`GOVUK_APP_DOMAIN` needs to be set, just use `www.gov.uk`
-
-`PLEK_SERVICE_STATIC_URI` should be set to a GOV.UK [Static](https://github.com/alphagov/static) host, eg `https://assets-origin.preview.alphagov.co.uk`.
-That version of Static is used to fetch components from.
+In addition to the static host, `GOVUK_APP_DOMAIN` needs to be set, just use `www.gov.uk`.
