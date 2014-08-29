@@ -2,6 +2,11 @@ class ComponentController < ApplicationController
 
   def show
     @component = get_component(params[:id])
+
+    @component_fixture = {}
+    if @component["fixtures"].any?
+      @component_fixture = @component["fixtures"].values.first.with_indifferent_access
+    end
   end
 
   def list

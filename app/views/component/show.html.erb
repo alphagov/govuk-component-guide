@@ -6,11 +6,31 @@
 
   <p>How to call this component</p>
   <code class="block">
-    &lt;%= render partial: 'govuk_component/<%= @component["id"] %>' %&gt;
+&lt;%= render partial: 'govuk_component/<%= @component["id"] %>' %&gt;
   </code>
 
   <p>How this component looks</p>
-  <div class="preview">
-    <%= render partial: "govuk_component/#{@component["id"]}" %>
+  <div class="preview primary">
+    <%= render partial: "govuk_component/#{@component["id"]}", locals: @component_fixture %>
   </div>
+
+  <% if @component["fixtures"].any? %>
+  <div class="fixtures">
+    <h2>Other Examples</h2>
+    <ol>
+    <% @component["fixtures"].each do |fixture_key, fixture_data| %>
+      <li class="fixture">
+        <h3>
+          <%= fixture_key.humanize %>
+        </h3>
+        <div class="preview">
+          <%= render partial: "govuk_component/#{@component["id"]}", locals: fixture_data.with_indifferent_access %>
+        </div>
+        <code class="block small"><%= JSON.pretty_generate(fixture_data) %></code>
+      </li>
+    <% end %>
+    </ol>
+  </div>
+  <% end %>
+
 </div>

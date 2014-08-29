@@ -1,8 +1,18 @@
 
 div.component-show {
   .preview {
-    margin: 0 0 4em;
+    margin: 1em 0;
     padding: 1em;
     border: 1px solid #ccc;
+
+    &.primary {
+      margin: 0 0 4em;
+    }
+  }
+
+  .fixtures {
+    li {
+      margin: 1em 0 2em;
+    }
   }
 }
