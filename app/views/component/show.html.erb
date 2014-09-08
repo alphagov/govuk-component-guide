@@ -9,9 +9,7 @@
   <code class="language-ruby">&lt;%= render partial: 'govuk_component/<%= @component.id %>' %&gt;</code>
 </div>
   <p>How this component looks</p>
-  <div class="preview primary">
-    <%= render partial: "govuk_component/#{@component.id}", locals: @component.fixture.data %>
-  </div>
+  <%= render partial: "component/preview", locals: { component: @component, fixture: @component.fixture } %>
 
   <% if @component.fixtures? %>
   <div class="fixtures">
@@ -22,9 +20,7 @@
         <h3>
           <%= fixture.name %>
         </h3>
-        <div class="preview">
-          <%= render partial: "govuk_component/#{@component.id}", locals: fixture.data %>
-        </div>
+        <%= render partial: "component/preview", locals: { component: @component, fixture: fixture } %>
 <div class="code-block" contenteditable>
   <code class="language-ruby"><%= JSON.pretty_generate(fixture.data) %></code>
 </div>
