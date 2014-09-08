@@ -28,7 +28,7 @@ class Component < Struct.new(:id, :name, :description, :fixtures)
     fixtures.first
   end
 
-  def fixtures?
-    fixtures.any? or fixtures.slice(1..-1).any?
+  def other_fixtures
+    fixtures.slice(1..-1)
   end
 end

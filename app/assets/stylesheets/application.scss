@@ -43,6 +43,7 @@ div.code-block {
 #wrapper {
   @include grid-container;
   border-bottom: none;
+  padding-bottom: $gutter * 4;
 }
 
 #header {

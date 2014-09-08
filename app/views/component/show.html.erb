@@ -10,18 +10,19 @@
   <p>How this component looks</p>
   <%= render partial: "component/preview", locals: { component: @component, fixture: @component.fixture } %>
 
-  <% if @component.fixtures? %>
+  <% if @component.other_fixtures.any? %>
   <div class="fixtures">
-    <h2>Fixtures</h2>
+    <h2>Other examples</h2>
     <ol>
-    <% @component.fixtures.each do |fixture| %>
+    <% @component.other_fixtures.each do |fixture| %>
       <li class="fixture">
         <h3>
           <%= fixture.name %>
         </h3>
-        <%= render partial: "component/preview", locals: { component: @component, fixture: fixture } %>
 
         <%= render partial: "component/call", locals: { component: @component, fixture: fixture } %>
+
+        <%= render partial: "component/preview", locals: { component: @component, fixture: fixture } %>
       </li>
     <% end %>
     </ol>

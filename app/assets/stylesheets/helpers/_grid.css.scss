@@ -4,14 +4,17 @@
 $grid-max-width: 1020px;
 
 @mixin grid-container {
-  margin: 0 auto;
+
+  @include grid-indent;
+
+  margin-left: auto;
+  margin-right: auto;
   width: auto;
+
   max-width: $grid-max-width - ($gutter-half * 2);
-  padding: 0 $gutter-half;
 
   @include media(tablet) {
     max-width: $grid-max-width - ($gutter * 2);
-    padding: 0 $gutter;
   }
 }
 

@@ -20,6 +20,12 @@ div.component-show {
   }
 
   .fixtures {
+
+    h2 {
+      margin-bottom: $gutter;
+      font-weight: bold;
+    }
+
     margin-top: $gutter * 2;
     ol {
       margin: 0;
