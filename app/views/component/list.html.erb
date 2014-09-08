@@ -2,16 +2,4 @@
   Available Components
 <% end %>
 
-<div class="component-list">
-  <ol>
-    <% @components.each do |component| %>
-      <li>
-        <h2><a href="/component/<%= component.id %>"><%= component.name %></a></h2>
-        <% if component.description %>
-          <p><%= component.description %></p>
-        <% end %>
-      </li>
-    <% end %>
-  </ol>
-
-</div>
+<%= render partial: "component/list", locals: {components: @components } %>
