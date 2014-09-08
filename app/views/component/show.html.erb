@@ -5,10 +5,9 @@
 <div class="component-show">
 
   <p>How to call this component</p>
-  <code class="block">
-&lt;%= render partial: 'govuk_component/<%= @component["id"] %>' %&gt;
-  </code>
-
+<div class="code-block"contenteditable>
+  <code class="language-ruby">&lt;%= render partial: 'govuk_component/<%= @component["id"] %>' %&gt;</code>
+</div>
   <p>How this component looks</p>
   <div class="preview primary">
     <%= render partial: "govuk_component/#{@component["id"]}", locals: @component_fixture %>
@@ -26,9 +25,9 @@
         <div class="preview">
           <%= render partial: "govuk_component/#{@component["id"]}", locals: fixture_data.with_indifferent_access %>
         </div>
-        <code class="block small">
- <%= JSON.pretty_generate(fixture_data) %>
-        </code>
+<div class="code-block" contenteditable>
+  <code class="language-ruby"><%= JSON.pretty_generate(fixture_data) %></code>
+</div>
       </li>
     <% end %>
     </ol>
