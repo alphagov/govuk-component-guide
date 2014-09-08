@@ -5,9 +5,8 @@
 <div class="component-show">
 
   <p>How to call this component</p>
-<div class="code-block"contenteditable>
-  <code class="language-ruby">&lt;%= render partial: 'govuk_component/<%= @component.id %>' %&gt;</code>
-</div>
+  <%= render partial: "component/call", locals: { component: @component, fixture: @component.fixture } %>
+
   <p>How this component looks</p>
   <%= render partial: "component/preview", locals: { component: @component, fixture: @component.fixture } %>
 
@@ -21,9 +20,8 @@
           <%= fixture.name %>
         </h3>
         <%= render partial: "component/preview", locals: { component: @component, fixture: fixture } %>
-<div class="code-block" contenteditable>
-  <code class="language-ruby"><%= JSON.pretty_generate(fixture.data) %></code>
-</div>
+
+        <%= render partial: "component/call", locals: { component: @component, fixture: fixture } %>
       </li>
     <% end %>
     </ol>
