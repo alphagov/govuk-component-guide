@@ -1,18 +1,36 @@
+@import "helpers/grid";
+@import "typography";
 
 div.component-show {
   .preview {
-    margin: 1em 0;
-    padding: 1em;
-    border: 1px solid #ccc;
+    @include grid-outdent($padding-indent: true);
 
-    &.primary {
-      margin: 0 0 4em;
+    div[class^="govuk-"] {
+      &:hover {
+        outline: 1px solid #aaa;
+        box-shadow: 0 0 10px #aaa;
+      }
     }
   }
 
   .fixtures {
+    margin-top: $gutter * 2;
+    ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
     li {
-      margin: 1em 0 2em;
+      margin: 0 0 $gutter*2 0;
+
+      h3 {}
+
+      .preview {
+        margin: $gutter/2 0;
+        @include grid-outdent($padding-indent: true);
+      }
+
+      code {}
     }
   }
 }
