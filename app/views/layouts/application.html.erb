@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GOV.UK Component Guide</title>
+  <title><%= yield :header %> - GOV.UK Component Guide</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= stylesheet_link_tag    'prism', media: 'all' %>
   <%= javascript_include_tag 'prism' %>
@@ -13,8 +13,9 @@
 
   <header id="header">
     <p class="app-name"><a href="/">GOV.UK Components Guide</a></p>
-    <h1><%= yield :header %></h1>
   </header>
+
+  <h1><%= yield :header %></h1>
 
   <%= yield %>
 
