@@ -5,6 +5,12 @@ div.component-show {
   .preview {
     @include grid-outdent($padding-indent: true);
 
+    padding-top: $gutter/2;
+    padding-bottom: $gutter/2;
+
+    box-shadow: 0 0 10px #eee inset;
+    outline: 1px solid #ccc;
+
     div[class^="govuk-"] {
       &:hover {
         outline: 1px solid #aaa;
@@ -26,8 +32,8 @@ div.component-show {
       h3 {}
 
       .preview {
-        margin: $gutter/2 0;
-        @include grid-outdent($padding-indent: true);
+        margin-top: $gutter/2;
+        margin-bottom: $gutter/2;
       }
 
       code {}
