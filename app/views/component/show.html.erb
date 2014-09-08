@@ -1,32 +1,32 @@
 <% content_for :header do %>
-  <%= @component["name"] %>
+  <%= @component.name %>
 <% end %>
 
 <div class="component-show">
 
   <p>How to call this component</p>
 <div class="code-block"contenteditable>
-  <code class="language-ruby">&lt;%= render partial: 'govuk_component/<%= @component["id"] %>' %&gt;</code>
+  <code class="language-ruby">&lt;%= render partial: 'govuk_component/<%= @component.id %>' %&gt;</code>
 </div>
   <p>How this component looks</p>
   <div class="preview primary">
-    <%= render partial: "govuk_component/#{@component["id"]}", locals: @component_fixture %>
+    <%= render partial: "govuk_component/#{@component.id}", locals: @component.fixture.data %>
   </div>
 
-  <% if @component["fixtures"].any? %>
+  <% if @component.fixtures? %>
   <div class="fixtures">
-    <h2>Other Examples</h2>
+    <h2>Fixtures</h2>
     <ol>
-    <% @component["fixtures"].each do |fixture_key, fixture_data| %>
+    <% @component.fixtures.each do |fixture| %>
       <li class="fixture">
         <h3>
-          <%= fixture_key.humanize %>
+          <%= fixture.name %>
         </h3>
         <div class="preview">
-          <%= render partial: "govuk_component/#{@component["id"]}", locals: fixture_data.with_indifferent_access %>
+          <%= render partial: "govuk_component/#{@component.id}", locals: fixture.data %>
         </div>
 <div class="code-block" contenteditable>
-  <code class="language-ruby"><%= JSON.pretty_generate(fixture_data) %></code>
+  <code class="language-ruby"><%= JSON.pretty_generate(fixture.data) %></code>
 </div>
       </li>
     <% end %>
