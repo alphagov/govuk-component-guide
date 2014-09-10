@@ -14,33 +14,23 @@
  *= require_self
  */
 
-@import "grid_layout.scss";
 @import "typography.scss";
+@import "helpers/grid";
 
-.outer-block {
-  @include outer-block;
-}
+div.code-block {
+  @include grid-outdent($padding-indent: true);
+  padding-top: $gutter/2;
+  padding-bottom: $gutter/2;
+  // Match Prism styles to avoid a flash as it renders
+  background: #f5f2f0;
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
 
-.inner-block {
-  @include inner-block;
-}
-
-code {
-
-  @include core-19;
-
-  background: #eee;
-  padding: .1em .3em;
-  font-family: monospace;
-  &.block {
-    padding: 1em;
+  &[contenteditable]:hover {
+      cursor: text;
+  }
+  code {
     display: block;
   }
-
-  &.small {
-    @include core-14;
-  }
-  white-space: pre;
 }
 
 #global-header,
@@ -51,18 +41,22 @@ code {
 }
 
 #wrapper {
-  margin: 1em 5em;
+  @include grid-container;
   border-bottom: none;
+  padding-bottom: $gutter * 4;
 }
 
 #header {
+  @include grid-outdent($padding-indent: true);
+
+  margin-bottom: $gutter;
+  padding-top: $gutter/2;
+  padding-bottom: $gutter/2;
+
+  border-bottom: 1px solid #ccc;
 
   .app-name {
     margin: 0
   }
-  .inner-block {
-    border-bottom: 1px solid #ccc;
-  }
-  margin: 1em 0 2em;
 }
 

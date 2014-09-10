@@ -2,24 +2,7 @@
   Home
 <% end %>
 
-<h2>What's a component?</h2>
+<p>Components are a way to share UI patterns between applications, without duplicating code. <a href="/about">Find out more</a></p>
 
-<p>A simple way to share UI patterns between applications without having to duplicate code</p>
-
-<h2>How does they work?</h2>
-
-<p>Components hook in to your application template path and will allow you to insert a partial, which will handle it's own markup and styling.</p>
-
-<p>You can can consider them an abstraction/blackbox around a piece of UI, where you don't want to care about how it works, just that it does.</p>
-
-<h2>How do I use one?</h2>
-
-<p>You need to be using <a href="https://github.com/alphagov/slimmer" rel="external">Slimmer</a> in your Rails app, and add <code>include Slimmer::SharedTemplates</code> to your <code>ApplicationController</code>.</p>
-
-<p>From a template call a partial scoped to <code>govuk_component/</code> followed by the component name (<a href="/component">available components</a>).</p>
-
-<code class="block">
-  &lt;%= render partial: 'govuk_component/example_component' %&gt;
-</code>
-
-<p>This is still a huge work in progress, but this guide is intended expose that work as early and widely as possible. Lots of feedback welcome to <a href="https://github.com/dsingleton/" rel="external">David</a> and <a href="https://github.com/edds" rel="external">Edd</a>.</p>
+<h1>Components</h1>
+<%= render partial: "component/list", locals: {components: @components } %>

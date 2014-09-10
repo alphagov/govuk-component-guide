@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'about' => 'about#index'
+
   get 'component/:id' => 'component#show'
   get 'component' => 'component#list'
 

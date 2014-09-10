@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GOV.UK Component Guide</title>
+  <title><%= yield :header %> - GOV.UK Component Guide</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= stylesheet_link_tag    'prism', media: 'all' %>
+  <%= javascript_include_tag 'prism' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -10,19 +12,12 @@
 <div id="wrapper">
 
   <header id="header">
-    <div class="outer-block">
-      <div class="inner-block">
-        <p class="app-name"><a href="/">GOV.UK Components Guide</a></p>
-        <h1><%= yield :header %></h1>
-      </div>
-    </div>
+    <p class="app-name"><a href="/">GOV.UK Components Guide</a></p>
   </header>
 
-  <div class="outer-block">
-    <div class="inner-block">
-      <%= yield %>
-    </div>
-  </div>
+  <h1><%= yield :header %></h1>
+
+  <%= yield %>
 
 </div>
 

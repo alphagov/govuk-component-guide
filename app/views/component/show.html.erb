@@ -1,32 +1,28 @@
 <% content_for :header do %>
-  <%= @component["name"] %>
+  <%= @component.name %>
 <% end %>
 
 <div class="component-show">
 
   <p>How to call this component</p>
-  <code class="block">
-&lt;%= render partial: 'govuk_component/<%= @component["id"] %>' %&gt;
-  </code>
+  <%= render partial: "component/call", locals: { component: @component, fixture: @component.fixture } %>
 
   <p>How this component looks</p>
-  <div class="preview primary">
-    <%= render partial: "govuk_component/#{@component["id"]}", locals: @component_fixture %>
-  </div>
+  <%= render partial: "component/preview", locals: { component: @component, fixture: @component.fixture } %>
 
-  <% if @component["fixtures"].any? %>
+  <% if @component.other_fixtures.any? %>
   <div class="fixtures">
-    <h2>Other Examples</h2>
+    <h2>Other examples</h2>
     <ol>
-    <% @component["fixtures"].each do |fixture_key, fixture_data| %>
+    <% @component.other_fixtures.each do |fixture| %>
       <li class="fixture">
         <h3>
-          <%= fixture_key.humanize %>
+          <%= fixture.name %>
         </h3>
-        <div class="preview">
-          <%= render partial: "govuk_component/#{@component["id"]}", locals: fixture_data.with_indifferent_access %>
-        </div>
-        <code class="block small"><%= JSON.pretty_generate(fixture_data) %></code>
+
+        <%= render partial: "component/call", locals: { component: @component, fixture: fixture } %>
+
+        <%= render partial: "component/preview", locals: { component: @component, fixture: fixture } %>
       </li>
     <% end %>
     </ol>
