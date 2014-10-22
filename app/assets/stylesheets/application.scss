@@ -14,13 +14,13 @@
  *= require_self
  */
 
+@import "measurements";
+@import "grid_layout";
 @import "typography.scss";
-@import "helpers/grid";
 
 div.code-block {
-  @include grid-outdent($padding-indent: true);
-  padding-top: $gutter/2;
-  padding-bottom: $gutter/2;
+  @extend %outdent-to-full-width;
+  padding: $gutter-half 15px;
   // Match Prism styles to avoid a flash as it renders
   background: #f5f2f0;
   font-family: Consolas, Monaco, 'Andale Mono', monospace;
@@ -41,13 +41,13 @@ div.code-block {
 }
 
 #wrapper {
-  @include grid-container;
-  border-bottom: none;
+  @extend %site-width-container;
   padding-bottom: $gutter * 4;
 }
 
 #header {
-  @include grid-outdent($padding-indent: true);
+  @extend %outdent-to-full-width;
+  padding: 0 15px;
 
   margin-bottom: $gutter;
   padding-top: $gutter/2;

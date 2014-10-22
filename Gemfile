@@ -33,5 +33,5 @@ else
   gem 'slimmer', '4.2.0'
 end
 
-gem 'govuk_frontend_toolkit', '1.5.0'
+gem 'govuk_frontend_toolkit', '2.0.0'
 gem 'rest-client'

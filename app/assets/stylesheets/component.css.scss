@@ -1,12 +1,11 @@
-@import "helpers/grid";
-@import "typography";
+@import "measurements";
+@import "grid_layout";
+@import "typography.scss";
 
 div.component-show {
   .preview {
-    @include grid-outdent($padding-indent: true);
-
-    padding-top: $gutter/2;
-    padding-bottom: $gutter/2;
+    @extend %outdent-to-full-width;
+    padding: $gutter-half 15px;
 
     box-shadow: 0 0 10px #eee inset;
     outline: 1px solid #ccc;
