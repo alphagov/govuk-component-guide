@@ -46,9 +46,6 @@ div.code-block {
 }
 
 #header {
-  @extend %outdent-to-full-width;
-  padding: 0 15px;
-
   margin-bottom: $gutter;
   padding-top: $gutter/2;
   padding-bottom: $gutter/2;
