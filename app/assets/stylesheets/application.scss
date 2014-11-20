@@ -20,7 +20,7 @@
 
 div.code-block {
   @extend %outdent-to-full-width;
-  padding: $gutter-half 15px;
+  padding: $gutter;
   // Match Prism styles to avoid a flash as it renders
   background: #f5f2f0;
   font-family: Consolas, Monaco, 'Andale Mono', monospace;
@@ -43,9 +43,16 @@ div.code-block {
 #wrapper {
   @extend %site-width-container;
   padding-bottom: $gutter * 4;
+
+  > h1 {
+    @include bold-36;
+    margin: $gutter 0;
+  }
 }
 
 #header {
+  @include core-19;
+
   margin-bottom: $gutter;
   padding-top: $gutter/2;
   padding-bottom: $gutter/2;
@@ -54,6 +61,13 @@ div.code-block {
 
   .app-name {
     margin: 0
+  }
+}
+
+.component-list {
+  li {
+    @include core-19;
+    margin-bottom: $gutter-half;
   }
 }
 

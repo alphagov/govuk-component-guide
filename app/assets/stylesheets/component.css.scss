@@ -3,9 +3,14 @@
 @import "typography.scss";
 
 div.component-show {
+  > p {
+    @include core-19;
+    margin: $gutter 0;
+  }
+
   .preview {
     @extend %outdent-to-full-width;
-    padding: $gutter-half 15px;
+    padding: $gutter;
 
     box-shadow: 0 0 10px #eee inset;
     outline: 1px solid #ccc;
@@ -19,29 +24,30 @@ div.component-show {
   }
 
   .fixtures {
-
-    h2 {
-      margin-bottom: $gutter;
-      font-weight: bold;
-    }
-
     margin-top: $gutter * 2;
-    ol {
+
+    >h2 {
+      @include bold-27;
+      margin: $gutter 0;
+    }
+    >ol {
       margin: 0;
       padding: 0;
       list-style: none;
-    }
-    li {
-      margin: 0 0 $gutter*2 0;
 
-      h3 {}
+      .fixture {
+        margin: 0 0 $gutter*2 0;
 
-      .preview {
-        margin-top: $gutter/2;
-        margin-bottom: $gutter/2;
+        >h3 {
+          @include bold-24;
+          margin: $gutter-half 0;
+        }
+
+        >.preview {
+          margin-top: $gutter/2;
+          margin-bottom: $gutter/2;
+        }
       }
-
-      code {}
     }
   }
 }
