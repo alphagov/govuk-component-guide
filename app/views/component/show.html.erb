@@ -3,6 +3,11 @@
 <% end %>
 
 <div class="component-show">
+  <p class="description"><%= @component.description %></p>
+
+  <% if @component.body %>
+    <%= @component.html_body %>
+  <% end %>
 
   <p>How to call this component</p>
   <%= render partial: "component/call", locals: { component: @component, fixture: @component.fixture } %>

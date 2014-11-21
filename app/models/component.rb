@@ -1,4 +1,4 @@
-class Component < Struct.new(:id, :name, :description, :fixtures)
+class Component < Struct.new(:id, :name, :description, :body, :fixtures)
   def self.get(id)
     all.select { |component| component.id == id }.first
   end
@@ -13,7 +13,7 @@ class Component < Struct.new(:id, :name, :description, :fixtures)
     fixtures = component["fixtures"].map {|id, data|
       Fixture.new(id, data.with_indifferent_access)
     }
-    self.new(component["id"], component["name"], component["description"], fixtures)
+    self.new(component["id"], component["name"], component["description"], component["body"], fixtures)
   end
 
   def self.component_doc_url
@@ -26,6 +26,10 @@ class Component < Struct.new(:id, :name, :description, :fixtures)
 
   def fixture
     fixtures.first
+  end
+
+  def html_body
+    Kramdown::Document.new(body).to_html.html_safe
   end
 
   def other_fixtures
