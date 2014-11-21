@@ -3,6 +3,10 @@
 @import "typography.scss";
 
 div.component-show {
+  .description {
+    @include core-24;
+  }
+
   > p {
     @include core-19;
     margin: $gutter 0;
