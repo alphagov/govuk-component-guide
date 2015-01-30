@@ -21,6 +21,7 @@
 div.code-block {
   @extend %outdent-to-full-width;
   padding: $gutter;
+  margin:30px 0;
   // Match Prism styles to avoid a flash as it renders
   background: #f5f2f0;
   font-family: Consolas, Monaco, 'Andale Mono', monospace;
@@ -48,6 +49,11 @@ div.code-block {
     @include bold-36;
     margin: $gutter 0;
   }
+
+  p {
+    @include core-19;
+    max-width:740px;
+  }
 }
 
 #header {
@@ -71,3 +77,13 @@ div.code-block {
   }
 }
 
+.about-components {
+  h2 {
+    @include bold-24;
+    margin:30px 0 20px 0;
+  }
+
+  p {
+    margin-bottom: 20px;
+  }
+}
