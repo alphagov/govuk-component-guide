@@ -2,22 +2,26 @@
   About
 <% end %>
 
-<h2>What's a component?</h2>
+<div class="about-components">
 
-<p>A simple way to share UI patterns between applications without having to duplicate code</p>
+  <h2>What's a component?</h2>
 
-<p>Components hook in to your application template path and will allow you to insert a partial, which will handle it's own markup and styling.</p>
+  <p>A simple way to share UI patterns between applications without having to duplicate code</p>
 
-<p>You can can consider them an abstraction/blackbox around a piece of UI, where you don't want to care about how it works, just that it does.</p>
+  <p>Components hook in to your application template path and will allow you to insert a partial, which will handle it's own markup and styling.</p>
 
-<h2>How do I use one?</h2>
+  <p>You can can consider them an abstraction/blackbox around a piece of UI, where you don't want to care about how it works, just that it does.</p>
 
-<p>You need to be using <a href="https://github.com/alphagov/slimmer" rel="external">Slimmer</a> in your Rails app, and add <code>include Slimmer::SharedTemplates</code> to your <code>ApplicationController</code>.</p>
+  <h2>How do I use one?</h2>
 
-<p>From a template call a partial scoped to <code>govuk_component/</code> followed by the component name (<a href="/component">available components</a>).</p>
+  <p>You need to be using <a href="https://github.com/alphagov/slimmer" rel="external">Slimmer</a> in your Rails app, and add <code>include Slimmer::SharedTemplates</code> to your <code>ApplicationController</code>.</p>
 
-<div class="code-block">
-  <code class="language-ruby">&lt;%= render partial: 'govuk_component/example_component' %&gt;</code>
+  <p>From a template call a partial scoped to <code>govuk_component/</code> followed by the component name (<a href="/component">available components</a>).</p>
+
+  <div class="code-block">
+    <code class="language-ruby">&lt;%= render partial: 'govuk_component/example_component' %&gt;</code>
+  </div>
+
+  <p>This is still a huge work in progress, but this guide is intended expose that work as early and widely as possible. Lots of feedback welcome to <a href="https://github.com/dsingleton/" rel="external">David</a> and <a href="https://github.com/edds" rel="external">Edd</a>.</p>
+
 </div>
-
-<p>This is still a huge work in progress, but this guide is intended expose that work as early and widely as possible. Lots of feedback welcome to <a href="https://github.com/dsingleton/" rel="external">David</a> and <a href="https://github.com/edds" rel="external">Edd</a>.</p>
