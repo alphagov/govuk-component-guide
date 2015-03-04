@@ -1,5 +1,7 @@
 # GOV.UK Component Guide
 
+[![Build Status](https://travis-ci.org/alphagov/govuk-component-guide.svg)](https://travis-ci.org/alphagov/govuk-component-guide)
+
 A living style guide and documentation for GOV.UK Components &mdash; A new approach to sharing UI patterns between applications without having to duplicate code.
 
 ## Caveats
