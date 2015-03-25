@@ -31,7 +31,7 @@ gem 'spring',      group: :development
 if ENV['SLIMMER_DEV']
   gem 'slimmer', :path => '../slimmer'
 else
-  gem 'slimmer', '4.2.0'
+  gem 'slimmer', '8.1.0'
 end
 
 gem 'govuk_frontend_toolkit', '2.0.0'
