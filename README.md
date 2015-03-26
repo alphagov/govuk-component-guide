@@ -33,6 +33,15 @@ PLEK_SERVICE_STATIC_URI=http://0.0.0.0:3013 bundle exec rails s
 
 This will point the component guide at your local running version of static.
 
-## Running on Heroku
+## Deployment
 
-In addition to the static host, `GOVUK_APP_DOMAIN` needs to be set, just use `www.gov.uk`.
+The app is currently deployed to a [Heroku instance](https://dashboard.heroku.com/apps/govuk-component-guide/), and to deploy it you'll need access to the Heroku admin panel.
+
+You can add yourself through the shared `heroku@digital.cabinet-office.gov.uk` account, or ask a [contributor](https://github.com/alphagov/govuk-component-guide/graphs/contributors) to add you.
+
+### Environment vars
+
+These are required when running a production environment
+
+- `PLEK_SERVICE_STATIC_URI` - as above.
+- `GOVUK_APP_DOMAIN`- set to `www.gov.uk`
