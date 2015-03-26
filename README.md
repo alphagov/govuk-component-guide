@@ -35,11 +35,9 @@ This will point the component guide at your local running version of static.
 
 ## Deployment
 
-The app is currently deployed to a [Heroku instance](https://dashboard.heroku.com/apps/govuk-component-guide/), and to deploy it you'll need access to the Heroku admin panel.
+The app is deployed to a [Heroku instance](https://dashboard.heroku.com/apps/govuk-component-guide/) and is continuously deployed, updating whenever `master` changes and CI passes.
 
-You can add yourself through the shared `heroku@digital.cabinet-office.gov.uk` account, or ask a [contributor](https://github.com/alphagov/govuk-component-guide/graphs/contributors) to add you.
-
-Once you have access you can [deploy to Heroku through git](https://devcenter.heroku.com/articles/git)
+To access the Heroku admin, add yourself through the shared `heroku@digital.cabinet-office.gov.uk` account, or ask a [contributor](https://github.com/alphagov/govuk-component-guide/graphs/contributors) to add you.
 
 ### Environment vars
 
