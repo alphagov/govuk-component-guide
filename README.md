@@ -39,6 +39,8 @@ The app is currently deployed to a [Heroku instance](https://dashboard.heroku.co
 
 You can add yourself through the shared `heroku@digital.cabinet-office.gov.uk` account, or ask a [contributor](https://github.com/alphagov/govuk-component-guide/graphs/contributors) to add you.
 
+Once you have access you can [deploy to Heroku through git](https://devcenter.heroku.com/articles/git)
+
 ### Environment vars
 
 These are required when running a production environment
