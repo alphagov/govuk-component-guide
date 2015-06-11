@@ -34,10 +34,12 @@ div.code-block {
   }
 }
 
-#global-header,
-#global-header-bar,
-#global-breadcrumb,
-#footer {
+#user-satisfaction-survey,
+#global-cookie-message {
+  display: none;
+}
+
+.footer-wrapper * {
   display: none;
 }
 

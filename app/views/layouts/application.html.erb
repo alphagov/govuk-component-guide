@@ -10,10 +10,15 @@
 <body>
 
 <div id="wrapper">
-
-  <div id="header">
-    <p class="app-name"><a href="/">GOV.UK Components Guide</a></p>
-  </div>
+  <nav id="proposition-menu" class="no-proposition-name">
+    <a id="proposition-name" href="/">Component Guide</a>
+    <!-- <ul id="proposition-links">
+      <li><a href="/Components</li>
+      <li>B</li>
+      <li>C</li>
+    </ul> -->
+  </nav>
+  <p class="header-context app-name"><a href="/">GOV.UK Components Guide</a></p>
 
   <h1><%= yield :header %></h1>
 
