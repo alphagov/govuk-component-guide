@@ -1,4 +1,4 @@
-class Fixture < Struct.new(:id, :data)
+Fixture = Struct.new(:id, :data) do
   def name
     id.humanize
   end

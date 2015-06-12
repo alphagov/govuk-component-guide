@@ -1,4 +1,4 @@
-class Component < Struct.new(:id, :name, :description, :body, :fixtures)
+Component = Struct.new(:id, :name, :description, :body, :fixtures) do
   def self.get(id)
     all.select { |component| component.id == id }.first
   end
