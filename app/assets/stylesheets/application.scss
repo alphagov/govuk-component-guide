@@ -45,15 +45,11 @@ div.code-block {
   @extend %site-width-container;
   padding-bottom: $gutter * 4;
 
-  > h1 {
+  h1 {
     @include bold-36;
     margin: $gutter 0;
   }
 
-  p {
-    @include core-19;
-    max-width:740px;
-  }
 }
 
 #header {
@@ -67,6 +63,13 @@ div.code-block {
 
   .app-name {
     margin: 0
+  }
+}
+
+#content {
+  p {
+    @include core-19;
+    max-width: $two-thirds;
   }
 }
 
