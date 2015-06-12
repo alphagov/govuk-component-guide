@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   get 'about' => 'about#index'
 
-  resources :components, only: [:index, :show]
+  resources :components, only: [:index, :show] do
+    resources :fixtures, only: [:index, :show]
+  end
 
   # Redirects for legacy URLs
   get 'component', to: redirect("/components")

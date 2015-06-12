@@ -22,7 +22,7 @@
     <% @component.other_fixtures.each do |fixture| %>
       <li class="fixture">
         <h3>
-          <%= fixture.name %>
+          <a href="<%= component_fixture_path(@component.id, fixture.id) %>"><%= fixture.name %></a>
         </h3>
 
         <%= render partial: "components/call", locals: { component: @component, fixture: fixture } %>
