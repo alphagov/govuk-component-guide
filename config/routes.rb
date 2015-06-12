@@ -2,8 +2,11 @@ Rails.application.routes.draw do
 
   get 'about' => 'about#index'
 
-  get 'component/:id' => 'component#show'
-  get 'component' => 'component#list'
+  resources :components, only: [:index, :show]
+
+  # Redirects for legacy URLs
+  get 'component', to: redirect("/components")
+  get 'component/:id', to: redirect("/components/%{id}")
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

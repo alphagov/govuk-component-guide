@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class ComponentControllerTest < ActionController::TestCase
-  test "should get list" do
-    get :list
+class ComponentsControllerTest < ActionController::TestCase
+  test "should get index" do
+    get :index
     assert_response :success
   end
 

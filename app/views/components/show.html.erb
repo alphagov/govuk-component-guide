@@ -10,10 +10,10 @@
   <% end %>
 
   <p>How to call this component</p>
-  <%= render partial: "component/call", locals: { component: @component, fixture: @component.fixture } %>
+  <%= render partial: "components/call", locals: { component: @component, fixture: @component.fixture } %>
 
   <p>How this component looks</p>
-  <%= render partial: "component/preview", locals: { component: @component, fixture: @component.fixture } %>
+  <%= render partial: "components/preview", locals: { component: @component, fixture: @component.fixture } %>
 
   <% if @component.other_fixtures.any? %>
   <div class="fixtures">
@@ -25,9 +25,9 @@
           <%= fixture.name %>
         </h3>
 
-        <%= render partial: "component/call", locals: { component: @component, fixture: fixture } %>
+        <%= render partial: "components/call", locals: { component: @component, fixture: fixture } %>
 
-        <%= render partial: "component/preview", locals: { component: @component, fixture: fixture } %>
+        <%= render partial: "components/preview", locals: { component: @component, fixture: fixture } %>
       </li>
     <% end %>
     </ol>

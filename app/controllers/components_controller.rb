@@ -1,12 +1,12 @@
 require 'component'
 
-class ComponentController < ApplicationController
+class ComponentsController < ApplicationController
 
   def show
     @component = Component.get(params[:id])
   end
 
-  def list
+  def index
     @components = Component.all
   end
 end
