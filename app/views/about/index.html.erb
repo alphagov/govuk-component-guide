@@ -16,7 +16,7 @@
 
   <p>You need to be using <a href="https://github.com/alphagov/slimmer" rel="external">Slimmer</a> in your Rails app, and add <code>include Slimmer::SharedTemplates</code> to your <code>ApplicationController</code>.</p>
 
-  <p>From a template call a partial scoped to <code>govuk_component/</code> followed by the component name (<a href="/component">available components</a>).</p>
+  <p>From a template call a partial scoped to <code>govuk_component/</code> followed by the component name (<a href="<%= components_path %>">available components</a>).</p>
 
   <div class="code-block">
     <code class="language-ruby">&lt;%= render partial: 'govuk_component/example_component' %&gt;</code>
