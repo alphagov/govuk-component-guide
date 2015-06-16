@@ -14,10 +14,10 @@ Component = Struct.new(:id, :name, :description, :body, :fixtures) do
   end
 
   def self.build(component)
-    fixtures = component["fixtures"].map {|id, data|
-      Fixture.new(id, data.with_indifferent_access)
+    fixtures = component[:fixtures].map {|id, data|
+      Fixture.new(id.to_s, data)
     }
-    self.new(component["id"], component["name"], component["description"], component["body"], fixtures)
+    self.new(component[:id], component[:name], component[:description], component[:body], fixtures)
   end
 
   def self.component_doc_url
@@ -25,7 +25,10 @@ Component = Struct.new(:id, :name, :description, :body, :fixtures) do
   end
 
   def self.fetch_component_doc
-    JSON.parse(RestClient.get(component_doc_url).body)
+    JSON.parse(
+      RestClient.get(component_doc_url).body,
+      {symbolize_names: true}
+    )
   end
 
   def fixture
