@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
 
 private
   def set_custom_slimmer_headers
-    set_slimmer_headers(template: 'core_layout', report_a_problem: 'false')
+    set_slimmer_headers(template: 'core_layout', report_a_problem: 'false', remove_search: true)
   end
 end
