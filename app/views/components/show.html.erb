@@ -12,27 +12,36 @@
   <p>How to call this component</p>
   <%= render partial: "components/call", locals: { component: @component, fixture: @component.fixture } %>
 
-  <p>How this component looks</p>
-  <%= render partial: "components/preview", locals: { component: @component, fixture: @component.fixture } %>
-
-  <% if @component.other_fixtures.any? %>
-  <div class="fixtures">
-    <h2>Other examples <small>(<a href="<%= component_preview_path(@component.id) %>">preview all</a>)</small></h2>
+  <% if @component.preview == 'page' %>
+    <h2>This component can't be previewed inline</h2>
+    <p>You can view each example individually on a page on it's own</p>
     <ol>
-    <% @component.other_fixtures.each do |fixture| %>
-      <li class="fixture">
-        <h3>
-          <a href="<%= component_fixture_path(@component.id, fixture.id) %>"><%= fixture.name %></a>
-          <small>(<a href="<%= component_fixture_preview_path(@component.id, fixture.id) %>">preview</a>)</small>
-        </h3>
-
-        <%= render partial: "components/call", locals: { component: @component, fixture: fixture } %>
-
-        <%= render partial: "components/preview", locals: { component: @component, fixture: fixture } %>
-      </li>
-    <% end %>
+      <% @component.fixtures.each do |fixture| %>
+        <li><a href="<%= component_fixture_path(@component.id, fixture.id) %>"><%= fixture.name %></a></li>
+      <% end %>
     </ol>
-  </div>
-  <% end %>
+  <% else %>
+    <p>How this component looks</p>
+    <%= render partial: "components/preview", locals: { component: @component, fixture: @component.fixture } %>
 
+    <% if @component.other_fixtures.any? %>
+    <div class="fixtures">
+      <h2>Other examples</h2>
+      <ol>
+      <% @component.other_fixtures.each do |fixture| %>
+        <li class="fixture">
+          <h3>
+            <a href="<%= component_fixture_path(@component.id, fixture.id) %>"><%= fixture.name %></a>
+            <small>(<a href="<%= component_fixture_preview_path(@component.id, fixture.id) %>">preview</a>)</small>
+          </h3>
+
+          <%= render partial: "components/call", locals: { component: @component, fixture: fixture } %>
+
+          <%= render partial: "components/preview", locals: { component: @component, fixture: fixture } %>
+        </li>
+      <% end %>
+      </ol>
+    </div>
+    <% end %>
+  <% end %>
 </div>

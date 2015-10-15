@@ -1,4 +1,4 @@
-Component = Struct.new(:id, :name, :description, :body, :fixtures) do
+Component = Struct.new(:id, :name, :description, :body, :preview, :fixtures) do
   def self.get(id)
     all.select { |component| component.id == id }.first
   end
@@ -17,7 +17,7 @@ Component = Struct.new(:id, :name, :description, :body, :fixtures) do
     fixtures = component[:fixtures].map {|id, data|
       Fixture.new(id.to_s, data)
     }
-    self.new(component[:id], component[:name], component[:description], component[:body], fixtures)
+    self.new(component[:id], component[:name], component[:description], component[:body], component.fetch(:preview, 'page'), fixtures)
   end
 
   def self.component_doc_url

@@ -25,7 +25,7 @@ div.code-block {
   margin:30px 0;
   padding: $gutter;
   @extend %outdent-to-full-width;
-
+  overflow: scroll;
   // Match Prism styles to avoid a flash as it renders
   background: #f5f2f0;
   font-family: Consolas, Monaco, 'Andale Mono', monospace;

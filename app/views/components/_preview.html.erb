@@ -1,3 +1,11 @@
-<div class="preview">
-  <%= render partial: "govuk_component/#{component.id}", locals: fixture.data %>
-</div>
+<% @output = capture do %><% render partial: "govuk_component/#{component.id}", locals: fixture.data%><%end%>
+
+<% if component.preview == 'markup' %>
+  <div class="code-block">
+    <code class="language-markup"><%= @output.to_str %></code>
+  </div>
+<% else %>
+  <div class="preview">
+    <%= @output %>
+  </div>
+<% end %>
