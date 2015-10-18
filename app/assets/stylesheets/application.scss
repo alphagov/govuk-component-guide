@@ -13,10 +13,12 @@
  *= require_self
  */
 
+// `govuk_frontend_toolkit`
 @import "measurements";
 @import "grid_layout";
 @import "typography.scss";
 
+// App modules
 @import "component";
 
 div.code-block {
@@ -43,7 +45,6 @@ div.code-block {
 }
 
 #wrapper {
-  @extend %site-width-container;
   padding-bottom: $gutter * 4;
 
   > h1 {
