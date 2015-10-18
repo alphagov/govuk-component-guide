@@ -22,9 +22,10 @@
 @import "component";
 
 div.code-block {
-  @extend %outdent-to-full-width;
-  padding: $gutter;
   margin:30px 0;
+  padding: $gutter;
+  @extend %outdent-to-full-width;
+
   // Match Prism styles to avoid a flash as it renders
   background: #f5f2f0;
   font-family: Consolas, Monaco, 'Andale Mono', monospace;
