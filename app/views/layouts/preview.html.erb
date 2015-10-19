@@ -6,7 +6,8 @@
   <%= csrf_meta_tags %>
 </head>
 
-<body>
+<body class="<%= 'hide-header-and-footer' unless params[:preview] == 'page' %>">
+
   <div id="wrapper">
     <%= yield %>
   </div>
