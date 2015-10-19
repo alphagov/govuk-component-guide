@@ -12,6 +12,13 @@ class FixturesController < ApplicationController
     @fixtures = component.fixtures
   end
 
+  def preview
+    @fixture =  component.fixtures.select {|f|
+      f.id == params[:fixture_id]
+    }.first
+    render layout: 'preview'
+  end
+
 private
 
   def component

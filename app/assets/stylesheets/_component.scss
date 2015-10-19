@@ -1,7 +1,3 @@
-@import "measurements";
-@import "grid_layout";
-@import "typography.scss";
-
 div.component-show {
   .description {
     @include core-24;
@@ -33,6 +29,9 @@ div.component-show {
     >h2 {
       @include bold-27;
       margin: $gutter 0;
+      small {
+        @include bold-16;
+      }
     }
     >ol {
       margin: 0;
@@ -45,6 +44,10 @@ div.component-show {
         >h3 {
           @include bold-24;
           margin: $gutter-half 0;
+
+          small {
+            @include bold-16;
+          }
         }
 
         >.preview {
