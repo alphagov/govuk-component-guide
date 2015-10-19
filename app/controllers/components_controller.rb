@@ -9,4 +9,9 @@ class ComponentsController < ApplicationController
   def index
     @components = Component.all
   end
+
+  def preview
+    @component = Component.get(params[:component_id])
+    render layout: 'preview'
+  end
 end

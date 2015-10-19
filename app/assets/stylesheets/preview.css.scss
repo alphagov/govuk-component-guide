@@ -1,0 +1,30 @@
+// `govuk_frontend_toolkit`
+@import "measurements";
+@import "typography.scss";
+@import "colours.scss";
+
+html {
+  background: #fff;
+}
+
+#global-header,
+#global-header-bar,
+#global-breadcrumb,
+#footer {
+  display: none;
+}
+
+#wrapper {
+  min-height: 8em;
+}
+
+.preview {
+  padding: 30px;
+  h2 {
+    margin-bottom: 1em;
+    @include bold-16;
+    a {
+      color: $black;
+    }
+  }
+}

@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   get 'about' => 'about#index'
 
   resources :components, only: [:index, :show] do
-    resources :fixtures, only: [:index, :show]
+    get 'preview'
+    resources :fixtures, only: [:index, :show, :preview] do
+      get 'preview'
+    end
   end
 
   # Redirects for legacy URLs

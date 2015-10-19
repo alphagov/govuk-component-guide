@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield :title %> - GOV.UK Component Guide</title>
+  <%= stylesheet_link_tag 'preview', media: 'all' %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <div id="wrapper">
+    <%= yield %>
+  </div>
+</body>
+</html>

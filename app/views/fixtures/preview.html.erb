@@ -1,0 +1,7 @@
+<% content_for :title do %>
+  <%= @component.name %>: <%= @fixture.name %> preview
+<% end %>
+
+<div class="preview">
+  <%= render partial: "govuk_component/#{@component.id}", locals: @fixture.data %>
+</div>
