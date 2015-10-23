@@ -16,22 +16,24 @@ It's a pretty standard Rails app, clone it, `bundle` it.
 
 ## Running
 
-You'll need to set the environment variable `PLEK_SERVICE_STATIC_URI` to be a host running an instance of [alphagov/static](https://github.com/alphagov/static).
-
-This is where the component documentation used to generate the dynamic parts of this guide is fetched from. Pointing at
-different static hosts may show different components. For example, pointing at `assets.digital.cabinet-office.gov.uk` will
-be the latest/in-production version of components, but you could also point a local/in-development static host, to preview
-it's components (see below)
-
-## Running locally
-
-Checkout [alphagov/static](https://github.com/alphagov/static), follow the installation and local running instructions there, then run:
-
 ```
-PLEK_SERVICE_STATIC_URI=http://0.0.0.0:3013 bundle exec rails s
+$ PLEK_SERVICE_STATIC_URI=assets.digital.cabinet-office.gov.uk ./startup.sh
 ```
 
-This will point the component guide at your local running version of static.
+The application will start on port `3133`, so to access it visit [0.0.0.0:3113](http://0.0.0.0:3113/)
+
+The `PLEK_SERVICE_STATIC_URI` environment variable points to a public instance of [alphagov/static](https://github.com/alphagov/static) - This is where the component documentation used to generate the dynamic parts of this guide is fetched from. Pointing at
+different static hosts may show different components.
+
+## Running against local static
+
+If you'd like to run the component guide against a different version of static, for example, where you've added, or made changes to, components, you'll need to run a copy of static locally.
+
+To get a local copy of [alphagov/static](https://github.com/alphagov/static), follow the installation and local running instructions there, then run the component guide with this command:
+
+```
+$ PLEK_SERVICE_STATIC_URI=http://0.0.0.0:3013 ./startup.sh
+```
 
 ## Deployment
 
