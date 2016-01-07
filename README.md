@@ -20,7 +20,7 @@ It's a pretty standard Rails app, clone it, `bundle` it.
 $ PLEK_SERVICE_STATIC_URI=assets.digital.cabinet-office.gov.uk ./startup.sh
 ```
 
-The application will start on port `3133`, so to access it visit [0.0.0.0:3113](http://0.0.0.0:3113/)
+The application will start on port `3113`, so to access it visit [0.0.0.0:3113](http://0.0.0.0:3113/)
 
 The `PLEK_SERVICE_STATIC_URI` environment variable points to a public instance of [alphagov/static](https://github.com/alphagov/static) - This is where the component documentation used to generate the dynamic parts of this guide is fetched from. Pointing at
 different static hosts may show different components.
