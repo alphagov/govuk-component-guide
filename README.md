@@ -20,7 +20,12 @@ It's a pretty standard Rails app, clone it, `bundle` it.
 $ PLEK_SERVICE_STATIC_URI=assets.digital.cabinet-office.gov.uk ./startup.sh
 ```
 
-The application will start on port `3113`, so to access it visit [0.0.0.0:3113](http://0.0.0.0:3113/)
+If running on a VM, then Rails needs to be bound to `0.0.0.0` rather than localhost so that it can be accessed outside of the VM:
+```
+PLEK_SERVICE_STATIC_URI=assets.digital.cabinet-office.gov.uk bundle exec rails s -b 0.0.0.0 -p 3113
+```
+
+The application will start on port `3113`, so to access it visit [0.0.0.0:3113](http://0.0.0.0:3113/) or [dev.gov.uk:3113](http://dev.gov.uk:3113) on a VM.
 
 The `PLEK_SERVICE_STATIC_URI` environment variable points to a public instance of [alphagov/static](https://github.com/alphagov/static) - This is where the component documentation used to generate the dynamic parts of this guide is fetched from. Pointing at
 different static hosts may show different components.
@@ -33,6 +38,12 @@ To get a local copy of [alphagov/static](https://github.com/alphagov/static), fo
 
 ```
 $ PLEK_SERVICE_STATIC_URI=http://0.0.0.0:3013 ./startup.sh
+```
+
+Or on a VM:
+
+```
+PLEK_SERVICE_STATIC_URI=http://0.0.0.0:3013 bundle exec rails s -b 0.0.0.0 -p 3113
 ```
 
 ## Deployment
