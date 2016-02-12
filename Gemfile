@@ -23,6 +23,10 @@ end
 gem 'govuk_frontend_toolkit', '2.0.0'
 gem 'rest-client'
 
+group :production do
+  gem 'rails_stdout_logging'
+end
+
 group :development do
   gem 'spring'
   gem 'pry'

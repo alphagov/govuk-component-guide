@@ -1,0 +1,22 @@
+{
+  "name": "govuk-component-guide",
+  "scripts": {
+  },
+  "env": {
+    "GOVUK_APP_DOMAIN": "www.gov.uk",
+    "PLEK_SERVICE_STATIC_URI": "https://assets.digital.cabinet-office.gov.uk/",
+    "RACK_ENV": "production",
+    "RAILS_ENV": "production",
+    "SECRET_KEY_BASE": {
+      "generator": "secret"
+    }
+  },
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "urn:buildpack:heroku/ruby"
+    }
+  ]
+}
