@@ -25,10 +25,14 @@ Component = Struct.new(:id, :name, :description, :body, :fixtures) do
   end
 
   def self.fetch_component_doc
-    JSON.parse(
-      RestClient.get(component_doc_url).body,
-      {symbolize_names: true}
-    )
+    begin
+      JSON.parse(
+        RestClient.get(component_doc_url).body,
+        {symbolize_names: true}
+      )
+    rescue RestClient::BadGateway => e
+      raise "#{e} from #{Plek.current.find('static')} - is static running?"
+    end
   end
 
   def fixture
