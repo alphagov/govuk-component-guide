@@ -8,7 +8,7 @@ div.component-show {
     margin: $gutter 0;
   }
 
-  .preview {
+  .component-guide-preview {
     @extend %outdent-to-full-width;
     padding: $gutter;
 
@@ -50,7 +50,7 @@ div.component-show {
           }
         }
 
-        >.preview {
+        >.component-guide-preview {
           margin-top: $gutter/2;
           margin-bottom: $gutter/2;
         }

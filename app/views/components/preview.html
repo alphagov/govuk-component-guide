@@ -3,7 +3,7 @@
 <% end %>
 
 <% @component.fixtures.each do |fixture| %>
-<div class="preview">
+<div class="component-guide-preview">
   <h2><a href="<%= component_fixture_path(@component.id, fixture.id) %>"><%= fixture.name %></a></h2>
   <%= render partial: "govuk_component/#{@component.id}", locals: fixture.data %>
 </div>
