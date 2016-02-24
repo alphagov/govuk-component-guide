@@ -19,7 +19,7 @@ gem 'kramdown', '1.5'
 if ENV['SLIMMER_DEV']
   gem 'slimmer', :path => '../slimmer'
 else
-  gem 'slimmer', '9.0.0'
+  gem 'slimmer', '9.1.0'
 end
 
 gem 'govuk_frontend_toolkit', '2.0.0'
