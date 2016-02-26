@@ -1,4 +1,4 @@
-div.component-show {
+.component-show {
   .description {
     @include core-24;
   }
@@ -29,17 +29,19 @@ div.component-show {
     >h2 {
       @include bold-27;
       margin: $gutter 0;
+
       small {
         @include bold-16;
       }
     }
+
     >ol {
       margin: 0;
       padding: 0;
       list-style: none;
 
       .fixture {
-        margin: 0 0 $gutter*2 0;
+        margin: 0 0 $gutter * 2;
 
         >h3 {
           @include bold-24;
@@ -51,8 +53,8 @@ div.component-show {
         }
 
         >.component-guide-preview {
-          margin-top: $gutter/2;
-          margin-bottom: $gutter/2;
+          margin-top: $gutter / 2;
+          margin-bottom: $gutter / 2;
         }
       }
     }
