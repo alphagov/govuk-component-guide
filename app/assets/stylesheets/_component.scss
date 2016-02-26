@@ -1,11 +1,14 @@
 .component-show {
-  .description {
-    @include core-24;
-  }
 
-  > p {
-    @include core-19;
-    margin: $gutter 0;
+  .component-doc {
+    .description {
+      @include core-24;
+    }
+
+    p {
+      @include core-19;
+      margin: $gutter 0;
+    }
   }
 
   .component-guide-preview {
@@ -26,7 +29,7 @@
   .fixtures {
     margin-top: $gutter * 2;
 
-    >h2 {
+    .fixtures-title {
       @include bold-27;
       margin: $gutter 0;
 
@@ -35,27 +38,15 @@
       }
     }
 
-    >ol {
-      margin: 0;
-      padding: 0;
-      list-style: none;
+    .component-fixture {
+      margin: 0 0 $gutter * 2;
 
-      .fixture {
-        margin: 0 0 $gutter * 2;
+      .fixture-title {
+        @include bold-24;
+        margin: $gutter-half 0;
 
-        >h3 {
-          @include bold-24;
-          margin: $gutter-half 0;
-
-          // scss-lint:disable NestingDepth
-          small {
-            @include bold-16;
-          }
-        }
-
-        >.component-guide-preview {
-          margin-top: $gutter / 2;
-          margin-bottom: $gutter / 2;
+        small {
+          @include bold-16;
         }
       }
     }
