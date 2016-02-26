@@ -38,18 +38,22 @@ $border-color: #ccc;
 
 #wrapper {
   padding-bottom: $gutter * 4;
+}
+// scss-lint:enable IdSelector
 
-  > h1 {
-    @include bold-36;
-    margin: $gutter 0;
-  }
+.govuk-component-guide-title {
+  @include bold-36;
+  margin: $gutter 0;
+}
+
+.govuk-component-guide-title-description {
+  margin-bottom: $gutter;
 
   p {
     @include core-19;
     max-width: 740px;
   }
 }
-// scss-lint:enable IdSelector
 
 .govuk-component-guide-header {
   @include core-19;

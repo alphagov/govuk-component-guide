@@ -1,13 +1,20 @@
 .component-show {
 
   .component-doc {
-    .description {
-      @include core-24;
-    }
+    @include core-16;
 
     p {
-      @include core-19;
-      margin: $gutter 0;
+      margin: $gutter-half 0;
+    }
+
+    ol,
+    ul {
+      margin: 0 0 0 $gutter;
+    }
+
+    h3 {
+      margin: $gutter 0 $gutter-half;
+      @include bold-19;
     }
   }
 
