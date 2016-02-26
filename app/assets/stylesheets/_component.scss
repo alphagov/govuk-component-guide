@@ -1,4 +1,4 @@
-div.component-show {
+.component-show {
   .description {
     @include core-24;
   }
@@ -12,13 +12,13 @@ div.component-show {
     @extend %outdent-to-full-width;
     padding: $gutter;
 
-    box-shadow: 0 0 10px #eee inset;
-    outline: 1px solid #ccc;
+    box-shadow: 0 0 10px $border-color inset;
+    outline: 1px solid $border-color;
 
     div[class^="govuk-"] {
       &:hover {
-        outline: 1px solid #aaa;
-        box-shadow: 0 0 10px #aaa;
+        outline: 1px solid $border-color;
+        box-shadow: 0 0 10px $border-color;
       }
     }
   }
@@ -29,30 +29,33 @@ div.component-show {
     >h2 {
       @include bold-27;
       margin: $gutter 0;
+
       small {
         @include bold-16;
       }
     }
+
     >ol {
       margin: 0;
       padding: 0;
       list-style: none;
 
       .fixture {
-        margin: 0 0 $gutter*2 0;
+        margin: 0 0 $gutter * 2;
 
         >h3 {
           @include bold-24;
           margin: $gutter-half 0;
 
+          // scss-lint:disable NestingDepth
           small {
             @include bold-16;
           }
         }
 
         >.component-guide-preview {
-          margin-top: $gutter/2;
-          margin-bottom: $gutter/2;
+          margin-top: $gutter / 2;
+          margin-bottom: $gutter / 2;
         }
       }
     }

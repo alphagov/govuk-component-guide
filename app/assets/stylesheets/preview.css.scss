@@ -1,13 +1,14 @@
 // `govuk_frontend_toolkit`
 @import "measurements";
-@import "typography.scss";
-@import "colours.scss";
+@import "typography";
+@import "colours";
 
 html {
-  background: #fff;
+  background: $white;
 }
 
-body.hide-header-and-footer {
+.hide-header-and-footer {
+  // scss-lint:disable IdSelector
   #global-header,
   #global-header-bar,
   #global-breadcrumb,
@@ -16,15 +17,13 @@ body.hide-header-and-footer {
   }
 }
 
-#wrapper {
-  min-height: 8em;
-}
-
 .component-guide-preview {
   padding: 30px 0;
+
   > h2 {
     margin-bottom: 1em;
     @include bold-16;
+
     > a {
       color: $black;
     }

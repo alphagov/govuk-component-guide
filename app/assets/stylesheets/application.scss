@@ -1,43 +1,34 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_self
- */
-
 // `govuk_frontend_toolkit`
 @import "measurements";
 @import "grid_layout";
-@import "typography.scss";
+@import "typography";
+@import "colours";
+
+$prism-background: #f5f2f0;
+$border-color: #ccc;
 
 // App modules
 @import "component";
 
-div.code-block {
-  margin:30px 0;
+.code-block {
+  margin: 30px 0;
   padding: $gutter;
   @extend %outdent-to-full-width;
 
   // Match Prism styles to avoid a flash as it renders
-  background: #f5f2f0;
+  background: $prism-background;
   font-family: Consolas, Monaco, 'Andale Mono', monospace;
 
   &[contenteditable]:hover {
-      cursor: text;
+    cursor: text;
   }
+
   code {
     display: block;
   }
 }
 
+// scss-lint:disable IdSelector
 #global-header,
 #global-header-bar,
 #global-breadcrumb,
@@ -55,21 +46,22 @@ div.code-block {
 
   p {
     @include core-19;
-    max-width:740px;
+    max-width: 740px;
   }
 }
+// scss-lint:enable IdSelector
 
-#header {
+.govuk-component-guide-header {
   @include core-19;
 
   margin-bottom: $gutter;
-  padding-top: $gutter/2;
-  padding-bottom: $gutter/2;
+  padding-top: $gutter / 2;
+  padding-bottom: $gutter / 2;
 
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid $border-color;
 
   .app-name {
-    margin: 0
+    margin: 0;
   }
 }
 
@@ -83,7 +75,7 @@ div.code-block {
 .about-components {
   h2 {
     @include bold-24;
-    margin:30px 0 20px 0;
+    margin: 30px 0 20px;
   }
 
   p {
