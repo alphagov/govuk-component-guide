@@ -1,0 +1,10 @@
+language: ruby
+
+env:
+  - PLEK_SERVICE_STATIC_URI=assets.digital.cabinet-office.gov.uk
+
+script:
+  # Tests depend on an instance of `static` running, this needs to be stubbed
+  # out at some point, in the mean time hit production :(
+  - bundle exec rake test
+  - bundle exec govuk-lint-ruby

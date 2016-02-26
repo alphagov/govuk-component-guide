@@ -12,12 +12,12 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 2.0'
 
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',        group: :doc
+gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'kramdown', '1.5'
 
 if ENV['SLIMMER_DEV']
-  gem 'slimmer', :path => '../slimmer'
+  gem 'slimmer', path: '../slimmer'
 else
   gem 'slimmer', '9.1.0'
 end
@@ -34,4 +34,8 @@ group :development do
   gem 'pry'
   gem 'better_errors'
   gem 'binding_of_caller'
+end
+
+group :development, :test do
+  gem 'govuk-lint'
 end

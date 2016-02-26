@@ -1,16 +1,14 @@
 Component = Struct.new(:id, :name, :description, :body, :fixtures) do
   def self.get(id)
-    all.select { |component| component.id == id }.first
+    all.find { |component| component.id == id }
   end
 
   def self.all
-    if Rails.env.production? # Only use caching if we're in Production
-      Rails.cache.fetch('component_doc', expires_in: 15.minute) {
-        fetch_component_doc
-      }.map { |component| build(component) }
-    else
-      fetch_component_doc.map { |component| build(component) }
-    end
+    Rails.cache.fetch('component_doc', expires_in: 15.minute, force: !Rails.env.production?) {
+      fetch_component_doc.map { |component|
+        build(component)
+      }
+    }
   end
 
   def self.build(component)
@@ -28,7 +26,7 @@ Component = Struct.new(:id, :name, :description, :body, :fixtures) do
     begin
       JSON.parse(
         RestClient.get(component_doc_url).body,
-        {symbolize_names: true}
+        symbolize_names: true
       )
     rescue RestClient::BadGateway => e
       raise "#{e} from #{Plek.current.find('static')} - is static running?"

@@ -10,5 +10,4 @@ class ComponentsControllerTest < ActionController::TestCase
     get :show, id: 'title'
     assert_response :success
   end
-
 end

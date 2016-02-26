@@ -7,8 +7,8 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_custom_slimmer_headers
 
-
 private
+
   def set_custom_slimmer_headers
     set_slimmer_headers(report_a_problem: 'false')
   end
