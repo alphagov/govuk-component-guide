@@ -47,6 +47,7 @@
           @include bold-24;
           margin: $gutter-half 0;
 
+          // scss-lint:disable NestingDepth
           small {
             @include bold-16;
           }
