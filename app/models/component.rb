@@ -4,13 +4,11 @@ Component = Struct.new(:id, :name, :description, :body, :fixtures) do
   end
 
   def self.all
-    if Rails.env.production? # Only use caching if we're in Production
-      Rails.cache.fetch('component_doc', expires_in: 15.minute) {
-        fetch_component_doc
-      }.map { |component| build(component) }
-    else
-      fetch_component_doc.map { |component| build(component) }
-    end
+    Rails.cache.fetch('component_doc', expires_in: 15.minute, force: !Rails.env.production?) {
+      fetch_component_doc.map { |component|
+        build(component)
+      }
+    }
   end
 
   def self.build(component)
