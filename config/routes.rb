@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   get 'about' => 'about#index'
 
   resources :components, only: [:index, :show] do

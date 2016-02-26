@@ -7,8 +7,7 @@ class FixturesControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    get :show, {component_id: 'title', id: 'default'}
+    get :show, component_id: 'title', id: 'default'
     assert_response :success
   end
-
 end

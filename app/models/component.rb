@@ -1,6 +1,6 @@
 Component = Struct.new(:id, :name, :description, :body, :fixtures) do
   def self.get(id)
-    all.select { |component| component.id == id }.first
+    all.find { |component| component.id == id }
   end
 
   def self.all
@@ -28,7 +28,7 @@ Component = Struct.new(:id, :name, :description, :body, :fixtures) do
     begin
       JSON.parse(
         RestClient.get(component_doc_url).body,
-        {symbolize_names: true}
+        symbolize_names: true
       )
     rescue RestClient::BadGateway => e
       raise "#{e} from #{Plek.current.find('static')} - is static running?"

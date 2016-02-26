@@ -1,11 +1,10 @@
 require 'component'
 
 class FixturesController < ApplicationController
-
   def show
-    @fixture =  component.fixtures.select {|f|
+    @fixture = component.fixtures.find {|f|
       f.id == params[:id]
-    }.first
+    }
   end
 
   def index
@@ -13,9 +12,9 @@ class FixturesController < ApplicationController
   end
 
   def preview
-    @fixture =  component.fixtures.select {|f|
+    @fixture = component.fixtures.find {|f|
       f.id == params[:fixture_id]
-    }.first
+    }
     render layout: 'preview'
   end
 
