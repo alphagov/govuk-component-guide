@@ -28,6 +28,7 @@ $border-color: #ccc;
   }
 }
 
+// scss-lint:disable IdSelector
 #global-header,
 #global-header-bar,
 #global-breadcrumb,
@@ -48,8 +49,9 @@ $border-color: #ccc;
     max-width: 740px;
   }
 }
+// scss-lint:enable IdSelector
 
-#header {
+.govuk-component-guide-header {
   @include core-19;
 
   margin-bottom: $gutter;

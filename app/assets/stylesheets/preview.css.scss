@@ -8,16 +8,13 @@ html {
 }
 
 .hide-header-and-footer {
+  // scss-lint:disable IdSelector
   #global-header,
   #global-header-bar,
   #global-breadcrumb,
   #footer {
     display: none;
   }
-}
-
-#wrapper {
-  min-height: 8em;
 }
 
 .component-guide-preview {
