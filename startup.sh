@@ -1,1 +1,1 @@
-bundle exec rails s -p 3113
+bundle exec rails s -b 0.0.0.0 -p 3113
