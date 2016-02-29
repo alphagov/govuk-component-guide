@@ -15,7 +15,10 @@
     <p class="app-name"><a href="/">GOV.UK Components Guide</a></p>
   </div>
 
-  <h1><%= yield :header %></h1>
+  <h1 class="govuk-component-guide-title"><%= yield :header %></h1>
+  <% if content_for?(:header_description) %>
+  <div class="govuk-component-guide-title-description"><%= yield :header_description %></div>
+  <% end %>
 
   <%= yield %>
 
