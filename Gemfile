@@ -22,7 +22,7 @@ else
   gem 'slimmer', '9.1.0'
 end
 
-gem 'govuk_frontend_toolkit', '2.0.0'
+gem 'govuk_frontend_toolkit', '4.10.0'
 gem 'rest-client'
 
 group :production do
