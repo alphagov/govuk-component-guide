@@ -9,11 +9,15 @@
 </head>
 <body>
 
-<div id="wrapper">
-
-  <div class="govuk-component-guide-header">
-    <p class="app-name"><a href="/">GOV.UK Components Guide</a></p>
+<div class="header-proposition">
+  <div class="content">
+    <nav id="proposition-menu" role="navigation">
+      <a href="/" id="proposition-name">GOV.UK Publishing Component Guide</a>
+    </nav>
   </div>
+</div>
+
+<div id="wrapper">
 
   <h1 class="govuk-component-guide-title"><%= yield :header %></h1>
   <% if content_for?(:header_description) %>
