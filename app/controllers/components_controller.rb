@@ -3,6 +3,7 @@ require 'component'
 class ComponentsController < ApplicationController
   def show
     @component = Component.get(params[:id])
+    head :not_found if @component.nil?
   end
 
   def index
@@ -11,6 +12,10 @@ class ComponentsController < ApplicationController
 
   def preview
     @component = Component.get(params[:component_id])
-    render layout: 'preview'
+    if @component.nil?
+      head :not_found
+    else
+      render layout: 'preview'
+    end
   end
 end
