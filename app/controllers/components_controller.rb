@@ -15,6 +15,6 @@ class ComponentsController < ApplicationController
   end
 
   def not_found
-    render file: "#{Rails.root}/public/404", layout: false, status: :not_found
+    render status: 404, text: "404 error"
   end
 end
