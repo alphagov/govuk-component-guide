@@ -10,4 +10,10 @@ class FixturesControllerTest < ActionController::TestCase
     get :show, component_id: 'title', id: 'default'
     assert_response :success
   end
+
+  test "should fail to get show" do
+    # This fixture does not exist and should return a 404 error
+    get :show, component_id: 'title', id: 'test'
+    assert_response :missing
+  end
 end

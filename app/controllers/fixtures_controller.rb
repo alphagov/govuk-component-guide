@@ -5,6 +5,7 @@ class FixturesController < ApplicationController
     @fixture = component.fixtures.find {|f|
       f.id == params[:id]
     }
+    head :not_found if @fixture.nil?
   end
 
   def index
@@ -15,7 +16,11 @@ class FixturesController < ApplicationController
     @fixture = component.fixtures.find {|f|
       f.id == params[:fixture_id]
     }
-    render layout: 'preview'
+    if @fixture.nil?
+      head :not_found
+    else
+      render layout: 'preview'
+    end
   end
 
 private
