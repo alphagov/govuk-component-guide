@@ -14,7 +14,15 @@
 
   <h2>How do I use one?</h2>
 
-  <p>You need to be using <a href="https://github.com/alphagov/slimmer" rel="external">Slimmer</a> in your Rails app, and add <code>include Slimmer::SharedTemplates</code> to your <code>ApplicationController</code>.</p>
+  <p>You need to be using <a href="https://github.com/alphagov/slimmer" rel="external">Slimmer</a> in your Rails app, and add <code>include Slimmer::GovukComponents</code> to your <code>ApplicationController</code>.</p>
+
+  <div class="code-block">
+    <code class="language-ruby">
+class ApplicationController &lt; ActionController::Base
+  include Slimmer::GovukComponents
+end
+    </code>
+  </div>
 
   <p>From a template call a partial scoped to <code>govuk_component/</code> followed by the component name (<a href="<%= components_path %>">available components</a>).</p>
 
