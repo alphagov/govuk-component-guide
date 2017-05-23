@@ -12,7 +12,7 @@ Component = Struct.new(:id, :name, :description, :body, :fixtures) do
   end
 
   def self.build(component)
-    fixtures = component[:fixtures].map {|id, data|
+    fixtures = component[:fixtures].map { |id, data|
       Fixture.new(id.to_s, data)
     }
     self.new(component[:id], component[:name], component[:description], component[:body], fixtures)
