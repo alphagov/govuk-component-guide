@@ -19,11 +19,20 @@
   }
 
   .component-guide-preview {
-    @extend %outdent-to-full-width;
-    padding: $gutter;
+    padding: ($gutter * 1.5) $gutter $gutter;
+    border: 1px solid $border-colour;
+    position: relative;
 
-    box-shadow: 0 0 10px $border-color inset;
-    outline: 1px solid $border-color;
+    &:before {
+      @include core-14;
+      content: "EXAMPLE";
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 0.21053em 0.78947em;
+      background: $border-colour;
+      color: $white;
+    }
 
     div[class^="govuk-"] {
       &:hover {
