@@ -2,7 +2,7 @@ require 'component'
 
 class FixturesController < ApplicationController
   def show
-    @fixture = component.fixtures.find {|f|
+    @fixture = component.fixtures.find { |f|
       f.id == params[:id]
     }
     head :not_found if @fixture.nil?
@@ -13,7 +13,7 @@ class FixturesController < ApplicationController
   end
 
   def preview
-    @fixture = component.fixtures.find {|f|
+    @fixture = component.fixtures.find { |f|
       f.id == params[:fixture_id]
     }
     if @fixture.nil?
