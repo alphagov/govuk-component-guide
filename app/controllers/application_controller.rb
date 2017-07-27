@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   include Slimmer::GovukComponents
   include Slimmer::Headers
 
-  before_filter :set_custom_slimmer_headers
+  before_action :set_custom_slimmer_headers
 
 private
 

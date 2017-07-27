@@ -7,13 +7,13 @@ class ComponentsControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    get :show, id: 'title'
+    get :show, params: { id: 'title' }
     assert_response :success
   end
 
   test "should fail to get show" do
     # This component does not exist and should return a 404 error
-    get :show, id: 'test'
+    get :show, params: { id: 'test' }
     assert_response :missing
   end
 end
