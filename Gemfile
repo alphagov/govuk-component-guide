@@ -16,11 +16,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'kramdown', '1.5'
 
-if ENV['SLIMMER_DEV']
-  gem 'slimmer', path: '../slimmer'
-else
-  gem 'slimmer', '~> 10.0.0'
-end
+gem 'slimmer', '~> 11.0.0'
 
 gem 'govuk_frontend_toolkit', '4.10.0'
 gem 'rest-client'
