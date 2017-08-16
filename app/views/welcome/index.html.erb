@@ -1,7 +1,18 @@
-<% content_for :header do %>
-  GOV.UK Publishing Component Guide
+<%= render 'govuk_component/title', title: 'GOV.UK Publishing Components' %>
+
+<% body = capture do %>
+  <ul>
+    <li>
+      <a href="/static">static component guide</a>
+    </li>
+    <li>
+      <a href="https://government-frontend.herokuapp.com/component-guide">government-frontend component guide</a>
+    </li>
+  </ul>
 <% end %>
 
-<% content_for :header_description do %>
-  <p>Components are a way to share UI patterns between applications, without duplicating code, within the GOV.UK Publishing platform. <a href="/about">Find out more</a></p>
-<% end %>
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <%= render 'govuk_component/govspeak', content: body %>
+  </div>
+</div>
