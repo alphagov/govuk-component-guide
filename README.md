@@ -1,5 +1,9 @@
 # GOV.UK Component Guide
 
+**Component guides now live within applications and are generated using the [govuk_publishing_components gem](https://github.com/alphagov/govuk_publishing_components). This application is being retired.**
+
+**A list of all component guides is available here: https://docs.publishing.service.gov.uk/manual/components.html. Static components are listed here: https://govuk-static.herokuapp.com/component-guide/**
+
 [![Build Status](https://travis-ci.org/alphagov/govuk-component-guide.svg)](https://travis-ci.org/alphagov/govuk-component-guide)
 
 A living style guide and documentation for GOV.UK Components &mdash; A new approach to sharing UI patterns between applications without having to duplicate code.
